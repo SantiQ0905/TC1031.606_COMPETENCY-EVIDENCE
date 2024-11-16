@@ -1,0 +1,3 @@
+C:/Users/santy/Documents/TC1031_CompetencyEvidence/cmake-build-debug/CMakeFiles/TC1031_CompetencyEvidence.dir
+C:/Users/santy/Documents/TC1031_CompetencyEvidence/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/santy/Documents/TC1031_CompetencyEvidence/cmake-build-debug/CMakeFiles/rebuild_cache.dir
