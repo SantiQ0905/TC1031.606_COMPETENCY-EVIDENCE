@@ -1,9 +1,10 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <unordered_map>
 #include "FileHandler.h"
 #include "Record.h"
-#include "BinarySearchTree.h"
+#include "BinarySearchTree.tpp"
 
 void printMenu() {
     std::cout << "\nMenu:\n";
@@ -47,26 +48,46 @@ void handleIPRangeSearch(const std::vector<Record> &records) {
 }
 
 void handleTop5IPs(const std::vector<Record> &records) {
-    BinarySearchTree<int, std::string> bst;
+    // Declare unordered_map to store IP counts
     std::unordered_map<std::string, int> ipCount;
 
+    // Count occurrences of each IP
     for (const auto &record : records) {
         ipCount[record.ip]++;
     }
 
+    // Insert counts into the BST
+    BinarySearchTree<int, std::string> bst;
     for (const auto &[ip, count] : ipCount) {
         bst.insert(count, ip);
     }
 
-    auto topIPs = bst.getSortedElements();
+    // Get the top 5 IPs
+    auto sortedIPs = bst.getSortedElements();
     std::cout << "Top 5 IPs:\n";
-    for (int i = 0; i < std::min(5, static_cast<int>(topIPs.size())); ++i) {
-        std::cout << topIPs[i].second << ": " << topIPs[i].first << " accesses\n";
+    for (int i = 0; i < std::min(5, static_cast<int>(sortedIPs.size())); ++i) {
+        std::cout << sortedIPs[i].second << ": " << sortedIPs[i].first << " accesses\n";
     }
 }
 
+void displayRecords(const std::vector<Record> &records) {
+    for (const auto &record : records) {
+        std::cout << record.toString() << std::endl;
+    }
+}
+
+
 int main() {
-    std::vector<Record> records;
+    // Test loading the file
+    std::vector<Record> records = FileHandler::readFromFile("C:/Users/santy/Documents/TC1031_CompetencyEvidence/data/bitacora.txt");
+    if (records.empty()) {
+        std::cerr << "Error: No records loaded!" << std::endl;
+        return 1; // Exit the program if no records are loaded
+    } else {
+        std::cout << "Records loaded successfully!" << std::endl;
+        displayRecords(records); // Display the records
+    }
+
     int choice;
 
     do {
@@ -75,9 +96,9 @@ int main() {
 
         switch (choice) {
             case 1:
-                records = FileHandler::readFromFile("data/bitacora.txt");
+                records = FileHandler::readFromFile("C:/Users/santy/Documents/TC1031_CompetencyEvidence/data/bitacora.txt");
                 std::sort(records.begin(), records.end());
-                FileHandler::writeToFile("data/filtered_bitacora.txt", records);
+                FileHandler::writeToFile("C:/Users/santy/Documents/TC1031_CompetencyEvidence/data/filtered_bitacora.txt", records);
                 std::cout << "Data sorted by date and saved to 'filtered_bitacora.txt'\n";
                 break;
             case 2:

@@ -7,6 +7,7 @@
 
 #include <vector>
 #include <utility>
+#include <algorithm>
 
 template <typename K, typename V>
 class BinarySearchTree {

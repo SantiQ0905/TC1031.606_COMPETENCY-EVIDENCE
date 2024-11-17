@@ -37,6 +37,10 @@ bool Date::operator<=(const Date &other) const {
     return !(*this > other);
 }
 
+bool Date::operator>=(const Date &other) const {
+    return !(*this < other);
+}
+
 // Convert date to string
 std::string Date::toString() const {
     std::ostringstream oss;

@@ -19,6 +19,8 @@ public:
     bool operator<(const Date &other) const;
     bool operator>(const Date &other) const;
     bool operator<=(const Date &other) const;
+    bool operator>=(const Date &other) const;
+
 
     // To string for debugging
     std::string toString() const;

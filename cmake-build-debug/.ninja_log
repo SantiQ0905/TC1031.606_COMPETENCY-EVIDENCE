@@ -1,5 +1,16 @@
 # ninja log v6
-18	265	7534959054939871	CMakeFiles/TC1031_CompetencyEvidence.dir/src/IPAddress.cpp.obj	6e39453856083139
-10	392	7534964256535125	CMakeFiles/TC1031_CompetencyEvidence.dir/src/FileHandler.cpp.obj	d4aa876ced20287d
-17	394	7534964256609966	CMakeFiles/TC1031_CompetencyEvidence.dir/src/Date.cpp.obj	418f1e90a7f92756
-14	322	7534964256574953	CMakeFiles/TC1031_CompetencyEvidence.dir/src/Record.cpp.obj	63d1347f88a0e59e
+9	564	7535750235571086	CMakeFiles/TC1031_CompetencyEvidence.dir/src/FileHandler.cpp.obj	d4aa876ced20287d
+22	527	7535746812929860	CMakeFiles/TC1031_CompetencyEvidence.dir/src/IPAddress.cpp.obj	6e39453856083139
+21	512	7535750235696025	CMakeFiles/TC1031_CompetencyEvidence.dir/src/Date.cpp.obj	418f1e90a7f92756
+5	736	7535750235531216	CMakeFiles/TC1031_CompetencyEvidence.dir/src/main.cpp.obj	a44c9055166e9765
+13	447	7535750235616253	CMakeFiles/TC1031_CompetencyEvidence.dir/src/Record.cpp.obj	63d1347f88a0e59e
+4	473	7535751931921070	build.ninja	36b82f2bfa1ef2c1
+5	717	7535753415167258	CMakeFiles/TC1031_CompetencyEvidence.dir/src/main.cpp.obj	a44c9055166e9765
+719	870	7535753422296422	TC1031_CompetencyEvidence.exe	aed7f7f2b8a1d2b9
+12	436	7535763628204144	CMakeFiles/TC1031_CompetencyEvidence.dir/src/FileHandler.cpp.obj	d4aa876ced20287d
+6	756	7535763628148962	CMakeFiles/TC1031_CompetencyEvidence.dir/src/main.cpp.obj	a44c9055166e9765
+756	911	7535763635649373	TC1031_CompetencyEvidence.exe	aed7f7f2b8a1d2b9
+5	715	7535765470665425	CMakeFiles/TC1031_CompetencyEvidence.dir/src/main.cpp.obj	a44c9055166e9765
+715	858	7535765477772495	TC1031_CompetencyEvidence.exe	aed7f7f2b8a1d2b9
+5	721	7535769527682050	CMakeFiles/TC1031_CompetencyEvidence.dir/src/main.cpp.obj	a44c9055166e9765
+721	863	7535769534842072	TC1031_CompetencyEvidence.exe	aed7f7f2b8a1d2b9
