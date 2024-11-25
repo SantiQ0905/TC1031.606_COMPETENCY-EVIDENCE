@@ -1,7 +1,6 @@
-
 # Bitacora Analysis Tool
 
-This is a C++ project for analyzing and managing system logs (`bitacora.txt`). The program allows users to load, sort, and filter log data based on date or IP, and generate useful insights such as the top IPs by access frequency.
+This is a C++ project for analyzing and managing system logs (`bitacora.txt`). The program allows users to load, sort, filter, and analyze log data, generating insights such as the top IPs by access frequency.
 
 ## Table of Contents
 - [Features](#features)
@@ -38,6 +37,7 @@ bitacora_project/
 │   ├── topFive_ips.txt     # Output: Top 5 IPs by accesses
 ├── include/                # Header files
 │   ├── FileHandler.h
+│   ├── GraphUtils.h        # Handles adjacency lists and fan-out analysis
 │   ├── Record.h
 │   ├── Date.h
 │   ├── IPAddress.h
@@ -45,6 +45,7 @@ bitacora_project/
 ├── src/                    # Source files
 │   ├── main.cpp            # Main program
 │   ├── FileHandler.cpp
+│   ├── GraphUtils.cpp      # Graph operations for analyzing fan-out
 │   ├── Record.cpp
 │   ├── Date.cpp
 │   ├── IPAddress.cpp
@@ -59,7 +60,7 @@ bitacora_project/
 - **C++ Compiler**: Support for C++17 or higher.
 - **CMake**: Version 3.16 or higher.
 - **CLion (optional)**: For an integrated development environment.
-  
+
 ### Installation
 1. Clone this repository:
    ```bash
@@ -107,6 +108,9 @@ bitacora_project/
 ### **Option 4: Find Top 5 IPs by Accesses**
 - Calculates the top 5 most accessed IPs and displays the results. The results are also saved to `topFive_ips.txt`.
 
+### **Option 5: Analyze Fan-out**
+- Builds an adjacency list of IP connections, calculates the fan-out for each IP, and identifies the IP(s) with the highest fan-out. Results are displayed and saved.
+
 ### **Option 0: Exit**
 - Exits the program.
 
@@ -138,6 +142,19 @@ Oct 9 10:32:24 423.2.230.77 Failed password for illegal user guest
 960.96.3.29: 1 accesses
 ```
 
+### Output for Option 5 (Fan-out Analysis)
+```
+Fan-out of each node:
+IP: 423.2.230.77 -> Fan-out: 1
+IP: 118.15.416.57 -> Fan-out: 0
+IP: 897.53.984.6 -> Fan-out: 1
+IP: 960.96.3.29 -> Fan-out: 0
+
+Nodes with the highest fan-out (1):
+423.2.230.77
+897.53.984.6
+```
+
 ---
 
 ## License
@@ -156,4 +173,5 @@ Contributions are welcome! Feel free to open issues or submit pull requests.
 
 **Santiago Quintana**  
 - [GitHub Profile](https://github.com/SantiQ0905)  
-- [LinkedIn Profile](https://www.linkedin.com/in/santiago-quintana-moreno-861115192/)  
+- [LinkedIn Profile](https://www.linkedin.com/in/santiago-quintana-moreno-861115192/)
+
