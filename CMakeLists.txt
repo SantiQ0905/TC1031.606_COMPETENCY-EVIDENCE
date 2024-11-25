@@ -16,4 +16,6 @@ add_executable(TC1031_CompetencyEvidence src/main.cpp
         include/FileHandler.h
         include/IPAddress.h
         include/Record.h
-        include/BinarySearchTree.h)
+        include/BinarySearchTree.h
+        include/GraphUtils.h
+        src/GraphUtils.cpp)
